@@ -1,4 +1,6 @@
 extends ../index.pug
 
 block content
-    h1 this page user
+    ul.list-group
+        each user in users
+            li.list-group-item= user.name

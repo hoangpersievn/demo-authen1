@@ -1,6 +1,6 @@
 exports.authen = (req, res, next) => {
 
-    if(!req.cookies.set_cookie){
+    if(!req.cookies.idUser){
         res.redirect('/authen/login');
         return
     };
