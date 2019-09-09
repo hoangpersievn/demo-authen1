@@ -17,13 +17,16 @@ exports.login_post = (req, res) => {
         res.render('authen.pug', {
             errors : errors
         });
+        return;
     }
     if(!passwordUser){
         errors.push("Do you enter password ? ")
         res.render('authen.pug', {
             errors : errors
         });
+        return;
     }
-    res.cookie('set_cookie', 1234);
+    res.cookie('idUser', 1234);
+
     res.redirect('/user')
 }

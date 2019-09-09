@@ -3,7 +3,7 @@ extends ./index.pug
 block content
     each error in errors
             p= error
-    form(action="/authen", method="POST")
+    form(action="/authen/login", method="POST")
         .form-group
             label Email
             input(
