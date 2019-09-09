@@ -1,0 +1,20 @@
+extends ../index.pug
+
+block content
+    form(action="/user/login", method="POST")
+        .form-group
+            label Email
+            input(
+                class="form-control",
+                name="email",
+                type="email"
+            )
+        .form-group
+            label Password
+            input(
+                class="form-control",
+                name="password",
+                type="password"
+            )
+        button.btn.btn-primary Login
+        
