@@ -1,13 +1,15 @@
-extends ../index.pug
+extends ./index.pug
 
 block content
-    form(action="/user/login", method="POST")
+    each error in errors
+            p= error
+    form(action="/authen", method="POST")
         .form-group
             label Email
             input(
                 class="form-control",
                 name="email",
-                type="email"
+                type="text"
             )
         .form-group
             label Password
@@ -17,4 +19,5 @@ block content
                 type="password"
             )
         button.btn.btn-primary Login
+        
         
