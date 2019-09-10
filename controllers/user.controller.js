@@ -2,6 +2,16 @@
 const MongoClient = require('mongodb').MongoClient;
 const assert = require('assert');
  
+const findDocuments = function(db, callback) {
+    // Get the documents collection
+    const collection = db.collection('listuser');
+    // Find some documents
+    collection.find({}).toArray(function(err, docs) {
+      assert.equal(err, null);
+      callback(docs);
+    });
+}; // func find all 
+
 // Connection URL
 const url = 'mongodb://localhost:27017';
  
@@ -10,15 +20,6 @@ const dbName = 'usermanagerment';
 
 //method get
 exports.user = (req, res) => {
-    const findDocuments = function(db, callback) {
-        // Get the documents collection
-        const collection = db.collection('listuser');
-        // Find some documents
-        collection.find({}).toArray(function(err, docs) {
-          assert.equal(err, null);
-          callback(docs);
-        });
-    }
 
     MongoClient.connect(url, function(err, client) {
         assert.equal(null, err);
